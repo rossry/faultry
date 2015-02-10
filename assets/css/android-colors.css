@@ -1,0 +1,24 @@
+   /* ===================================
+   blue:   33b5e5 0099cc
+   violet: aa66cc 9933cc
+   green:  99cc00 669900
+   orange: ffbb33 ff8800
+   red:    ff4444 cc0000
+   ====================================*/
+
+
+.ac-bg-blue {
+    background-color:#33b5e5!important;
+}
+.ac-bg-purple {
+    background-color:#a6c!important;
+}
+.ac-bg-green {
+    background-color:#9c0!important;
+}
+.ac-bg-orange {
+    background-color:#fb3!important;
+}
+.ac-bg-red {
+    background-color:#f44!important;
+}

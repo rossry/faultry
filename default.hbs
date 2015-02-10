@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>{{meta_title}}</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="{{asset "icon/apple-touch-icon-57x57.png"}}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset "icon/apple-touch-icon-114x114.png"}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset "icon/apple-touch-icon-72x72.png"}}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{asset "icon/apple-touch-icon-144x144.png"}}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{asset "icon/apple-touch-icon-60x60.png"}}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{asset "icon/apple-touch-icon-120x120.png"}}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{asset "icon/apple-touch-icon-76x76.png"}}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{asset "icon/apple-touch-icon-152x152.png"}}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{asset "icon/apple-touch-icon-180x180.png"}}">
+	<meta name="apple-mobile-web-app-title" content="My Faults My Own">
+	<link rel="icon" type="image/png" href="{{asset "icon/favicon-192x192.png"}}" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{asset "icon/favicon-160x160.png"}}" sizes="160x160">
+	<link rel="icon" type="image/png" href="{{asset "icon/favicon-96x96.png"}}" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{asset "icon/favicon-16x16.png"}}" sizes="16x16">
+	<link rel="icon" type="image/png" href="{{asset "icon/favicon-32x32.png"}}" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="{{asset "icon/mstile-144x144.png"}}">
+	<meta name="application-name" content="My Faults My Own">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta name="description" content="{{meta_description}}" />
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!--<link rel="stylesheet" href="{{asset "fonts/font-awesome/css/font-awesome.min.css"}}">-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{asset "css/pure.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/screen.css"}}">
+	<link rel="stylesheet" href="{{asset "css/android-colors.css"}}"> {{ghost_head}}
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-51243410-1', 'rossry.net');
+		ga('send', 'pageview');
+	</script>
+
+	<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['\\(','\\)']]}});</script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+	<div id="sheet-layer-bottom" {{#if @blog.cover}}style="background-image:url({{@blog.cover}});background-position:center" {{/if}}>
+		<header>
+			<div id="sheet-header-content">
+				<div class="pure-g-r">
+					<div class="pure-u-1-2">
+						<a class="sheet-title" href="{{@blog.url}}"><h1 class="sheet-header-title">{{@blog.title}}</h1></a>
+					</div>
+					<div class="pure-u-1-2">
+						<h1 class="sheet-header-secondary">
+							    <a href="/blog/">About</a>
+							    &middot;
+							    <a href="/me/">Me</a>
+							    &middot;
+							    <a href="/me/#comm">Contact</a>
+							</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<div id="sheet-layer-top">
+		<div class="sheet-page-content">
+			{{{body}}}
+		</div>
+
+		<footer class="sheet-footer">
+			<div class="sheet-footer-content">
+				<div class="pure-g-r">
+					<div class="pure-u-1-2 sheet-copyright">
+						&copy;
+						<time datetime="{{date format='YYYY'}}">{{date format="YYYY"}}</time> <a href="{{@blog.url}}">{{@blog.title}}</a>
+						&middot;
+						<a href="/blog#technical">Techni-legal</a>
+					</div>
+
+					<div class="pure-u-1-2 sheet-footer-secondary">
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	{{ghost_foot}}
+
+	<script src="{{asset "js/main.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/figcaption.js"}}"></script>
+
+</body>
+
+</html>

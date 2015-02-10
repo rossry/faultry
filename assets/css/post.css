@@ -1,0 +1,156 @@
+   /* ===================================
+   7. Things
+   ====================================*/
+
+/* BoL */
+
+h3.c {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 28pt;
+}
+h3.c+p,
+m3.c+div{
+    margin-top: 0px;
+}
+img.link-tile,
+div.link-tile,
+a.link-tile{
+    height: 40px;
+}
+a.link-tile {
+	margin: 0px auto;
+    width: 260px;
+    
+    height: 38px;
+    padding:5px 0px;
+    display:block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    
+    line-height: 18px;
+}
+a.link-tile>article {
+    background-color: #aaa;
+    opacity: 0.4;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+	z-index: 1!important;
+	overflow: hidden;
+	line-height: 38px;
+}
+a.link-tile>article>img {
+	max-height: 38px;
+	max-width: 140px;
+	margin-top:5px;
+	z-index: 1!important;
+	vertical-align: middle;
+}
+a.link-tile>article>img.lt-bump-10 {
+    margin-top:-10px;
+    max-height: 68px;
+}
+a.link-tile>span {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	z-index: 2!important;
+}
+a.link-tile>span:nth-of-type(2n+1) {
+	font-size: 20px;
+	line-height: 38px;
+	width: 60px;
+	opacity: 0.5;
+}
+a.link-tile>span:nth-of-type(2) {
+	font-size: 38px;
+	font-weight: 300;
+	line-height: 38px;
+	width: 140px;
+	color: #000;
+	background-position: center!important;
+	background-size: contain!important;
+	background-repeat: no-repeat!important;
+}
+a.link-tile>span>i {
+	vertical-align: middle;
+}
+
+/* media frames */
+
+.post-content>img,
+.post-content p>img,
+.post-content p>a>img,
+.post-content figure img,
+.post-content iframe,
+.post-content>p>svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+figcaption {
+	text-align: center;
+	font-style: italic;
+    font-size: 14px;
+}
+
+/* formatting */
+
+pre.poem {
+    font-family: inherit;
+}
+
+.sc {
+    font-variant: small-caps;
+}
+
+div.empty-marker {
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+div.empty-marker+* {
+    margin-top: 0px;
+}
+
+div.hidden {
+    display:none;
+}
+
+li>ul {
+    margin-top:0px;
+}
+
+/* ??? */
+
+a>sup {
+    text-decoration: none;
+}
+
+.def {
+    font-weight:bold;
+    color:#070;
+}
+
+code {
+    color:#aaa;
+}
+
+div.nb {
+    background-color: #f3f3f3;
+    padding: 20px;
+	box-shadow: 1px 1px 1px rgba(174,174,174,0.5);
+	margin-bottom: 20px;
+}
+
+   /* ===================================
+   X. Etc.
+   ====================================*/

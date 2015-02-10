@@ -1,0 +1,85 @@
+{{!< default}}
+
+<main role="main">
+	<div class="pure-g-r">
+		<div class="pure-u-1-2"></div>
+		<div class="pure-u-1-2"><div class="pure-g">
+			<div class="pure-u-11-12">
+				<div class="sheet-panel sheet-sidebar">
+					<div class="pure-g">
+						<div class="pure-u-4-5"><p class=sheet-sidebar-desc>{{@blog.description}}</p><p id=faultry-subscribe-btn style="text-align:right;"><a class="sheet-btn sheet-btn-inline" href="{{@blog.url}}/rss/"><i class="fa fa-rss-square"></i> RSS</a></p></div>
+						<div class="pure-u-1-5">
+							<a href="/me/"><img class="sheet-sidebar-logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo"/></a>
+							<div style="text-align:center"><p><a id=faultry-subscribe-btn-fallback class="sheet-btn sheet-btn-inline" href="{{@blog.url}}/rss/"><i class="fa fa-rss-square"></i>&nbsp;RSS</a></p></div>
+						</div>
+					</div>
+				</div>
+				<div class="sheet-panel faultry-secondbar">
+				    <div class=faultry-secondbar-inner>
+                        <h3 style="font-size:21px"><a href="/reading/">Reading Feed</a><span id=faultry-last-update-whole> (<span id=faultry-last-update>last update: </span><span id="faultry-last-date">(loading)</span>)</span></h3>
+                        <div id="faultry-reading-panel">Loading...do you have Javascript enabled?</div>
+                        <div class="sheet-read-more" style="margin:0px"><a href="/reading/" style="text-decoration:none">READ MORE <i class="fa fa-caret-right"></i></a></div>
+					</div>
+					<div class=faultry-continuation-15></div>
+				</div>
+			</div>
+			<div class="pure-u-1-12">
+				<div class="sheet-panel faultry-sideways"><div class="kernel" style="margin-left:auto;margin-right:auto;"><div class="rotate kernel"><div id="faultry-rightbar"><a href="/blog/">About</a>&nbsp;<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>|<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>&nbsp;<a href="/me/">Me</a>&nbsp;<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>|<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>&nbsp;<a href="/me/#comm">Contact</a>&nbsp;<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>|<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>&nbsp;<a href="/vaporware/">Best&nbsp;Of</a>&nbsp;<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>|<span id="faultry-sideways-extraspace">&nbsp;&nbsp;</span>&nbsp;<a href="/vaporware/">Archive</a></div></div></div></div>
+			</div>
+		</div></div>
+		{{#foreach posts}}
+			<div class="pure-u-1-2 stagger">
+				<a class="sheet-post faultry-preview-panel {{post_class}}" href='{{url}}'>
+					<article class="sheet-panel">
+						<header>
+							<div><h2 class="sheet-title sheet-post-title">{{{title}}}</h2></div>
+							<div class="sheet-post-meta">
+								<div style="width:80px"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
+								{{#if tags}}
+									<div style="width:calc(100% - 90px)"><i class="fa fa-tags sheet-post-tags"></i> {{tags autolink="false"}}</div>
+								{{/if}}
+							</div>
+						</header>
+						
+						<section>
+							<p class="sheet-post-excerpt">{{excerpt characters="800"}}&hellip;</p>
+						</section>
+						<div class="faultry-continuation-40" style="bottom:31px"></div>
+						<div class="sheet-read-more">READ MORE <i class="fa fa-caret-right"></i></div>
+					</article>
+				</a>
+			</div>
+		{{/foreach}}
+		<div class="pure-u-1-2 stagger">
+			<div class="sheet-panel faultry-pagination">
+				{{pagination}}
+			</div>
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        url: "/reading/",
+        type: "GET",
+        dataType: "html",
+        success: function (res) {
+            $("#faultry-reading-panel")
+                .html($(res)
+                .find("#post-content")
+                .addClass('done'));
+		}
+	});
+	$.ajax({
+        url: "/reading/",
+        type: "GET",
+        dataType: "html",
+        success: function (res) {
+            $("#faultry-last-date")
+                .html($(res)
+                .find("#last-mod-date")
+                .addClass('done'));
+		}
+	});
+</script>
